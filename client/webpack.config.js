@@ -9,8 +9,8 @@ module.exports = () => {
     // Entry point for files
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js',
-      database: './src/js/database.js'
+      install: './src/js/install.js'
+
     },
     // Output for our bundles
     output: {
@@ -21,9 +21,9 @@ module.exports = () => {
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Text Editor'
+        title: 'textEditor'
       }),
-     
+
       // Injects our custom service worker
       new InjectManifest({
         swSrc: './src-sw.js',
@@ -34,8 +34,8 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Text Editor',
-        short_name: 'T.E.D',
+        name: 'textEditor',
+        short_name: 'T.E',
         description: 'Edit Your Text Here!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
